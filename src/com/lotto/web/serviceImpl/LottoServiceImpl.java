@@ -1,6 +1,7 @@
 package com.lotto.web.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.lotto.web.domain.LottoBean;
@@ -21,10 +22,8 @@ public class LottoServiceImpl implements LottoService{
 				custom.add(lotto);
 				// 5개 받고 Override
 				tempLottoNum = new ArrayList<String>();
-			} else {
-				tempLottoNum.add(makeLottoNum());
 			}
-			
+			tempLottoNum.add(makeLottoNum());
 		}
 	}
 	@Override
@@ -41,6 +40,7 @@ public class LottoServiceImpl implements LottoService{
 				}
 			}
 		}
+		Arrays.sort(res);
 		// 중복없는 Random 값 입력
 		for(int i = 0; i < 6; i++) { 
 			if(i != 5) {

@@ -15,15 +15,15 @@ public class LottoServiceImpl implements LottoService{
 	@Override
 	public void makeCustom(LottoBean lotto) {
 		int lottoCount = lotto.getInputMoney() / 1000;
-		List<String> tempLottoNum = new ArrayList<String>();
+		String res = "";
 		for(int i = 0; i < lottoCount; i++) {
 			if(i != 0 && i % 5 == 0) {
-				lotto.setLottoNumber(tempLottoNum);
-				custom.add(lotto);
-				// 5개 받고 Override
-				tempLottoNum = new ArrayList<String>();
+				custom.clear();
 			}
-			tempLottoNum.add(makeLottoNum());
+			lotto = new LottoBean();
+			res = makeLottoNum();
+			lotto.setLottoNumber(res);
+			custom.add(lotto);
 		}
 	}
 	@Override

@@ -1,7 +1,5 @@
 package com.lotto.web.domain;
 
-import java.util.List;
-
 public class LottoBean {
 	private int inputMoney;
 	private String lottoNumber;

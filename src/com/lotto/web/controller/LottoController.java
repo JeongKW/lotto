@@ -44,7 +44,6 @@ public class LottoController {
 					bw = new BufferedWriter(new FileWriter(f));
 					bw.write(resFileStr);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} finally {
 					try {
